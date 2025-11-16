@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamal Bashi | Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="profile-img-container">
+                <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img" id="profilePicture">
+                <button class="camera-btn" id="cameraBtn" title="Take a picture">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+            <h2>Jamal Bashi</h2>
+            <p>Student at Buguema University</p>
+        </div>
+        
+        <!-- Camera Modal -->
+        <div class="modal" id="cameraModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Take a Profile Picture</h3>
+                <div class="camera-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                </div>
+                <div class="camera-controls">
+                    <button id="captureBtn" class="btn">
+                        <i class="fas fa-camera"></i> Capture
+                    </button>
+                    <button id="retakeBtn" class="btn btn-secondary" style="display: none;">
+                        <i class="fas fa-redo"></i> Retake
+                    </button>
+                    <button id="saveBtn" class="btn btn-primary" style="display: none;">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-image"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="nav-right">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="user-menu">
+                    <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.42_7e8cd867.jpg" alt="User">
+                    <span>Jamal Bashi</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to My Dashboard</h1>
+                    <p>Hello! I'm Jamal Bashi Abdullahi, a dedicated student at Buguema University pursuing my academic goals with passion and determination.</p>
+                    <a href="#contact" class="cta-button">Get in Touch</a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.42_7e8cd867.jpg" alt="Jamal Bashi Abdullahi">
+                        </div>
+                        <div class="about-text">
+                            <p>I am committed to excellence in my studies and constantly seek opportunities to expand my knowledge and skills in my field of study.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills">
+                <h2>My Skills</h2>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Web Development</span>
+                            <span class="percentage">85%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>JavaScript</span>
+                            <span class="percentage">90%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Design</span>
+                            <span class="percentage">75%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" data-percentage="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.43_06e6a9ce.jpg" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.43_b7e622a8.jpg" alt="Gallery Image 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.44_141e0f56.jpg" alt="Gallery Image 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.45_8642f3d7.jpg" alt="Gallery Image 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.51_aaa71e91.jpg" alt="Gallery Image 5">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <h2>Contact Me</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // You can replace the placeholder image with your actual profile picture
+        // document.getElementById('profilePicture').src = 'path-to-your-image.jpg';
+        
+        // Add active class to clicked nav items
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+        }
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #4338ca;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jamal Bashi Abdullahi</h1>
+            <p>Student at Buguema University | Reg No: 24/BCC/BU/R/0008</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="content">
+            <h2>Welcome to My Website</h2>
+            <p>This is a test page to verify everything is working correctly. If you can see this message, then:</p>
+            <ul>
+                <li>✅ HTML is working</li>
+                <li>✅ CSS is working</li>
+                <li id="js-status">❌ Testing JavaScript...</li>
+            </ul>
+            <button id="testButton">Test JavaScript Button</button>
+        </section>
+    </div>
+
+    <script>
+        // Update the JS status
+        document.getElementById('js-status').innerHTML = '✅ JavaScript is working!';
+        
+        // Add button click handler
+        document.getElementById('testButton').addEventListener('click', function() {
+            alert('🎉 Great! JavaScript is working perfectly!');
+        });
+        
+        // Console message
+        console.log('%cWebsite is working correctly!', 'color: #4f46e5; font-size: 16px; font-weight: bold;');
+    </script>
+</body>
+</html>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#home">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#education">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#gallery">
+                            <i class="fas fa-images"></i>
+                            <span>Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.42_7e8cd867.jpg" alt="Profile" class="user-avatar">
+                    <div class="user-details">
+                        <h4>Jamal Bashi</h4>
+                        <p>Student</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation -->
+            <header class="top-nav">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="nav-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.42_7e8cd867.jpg" alt="User">
+                        <span>Jamal Bashi</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="animate-text">Jamal Bashi Abdullahi</h1>
+            <p class="animate-text-delay">Student at Buguema University</p>
+            <p class="animate-text-delay-2">Reg No: 24/BCC/BU/R/0008</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.42_7e8cd867.jpg" alt="Jamal Bashi Abdullahi">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Jamal Bashi Abdullahi, a dedicated student at Buguema University pursuing my academic goals with passion and determination.</p>
+                    <p>I am committed to excellence in my studies and constantly seek opportunities to expand my knowledge and skills in my field of study.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.43_06e6a9ce.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.43_b7e622a8.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.44_141e0f56.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.45_8642f3d7.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp%20Image%202025-11-14%20at%2011.49.51_aaa71e91.jpg" alt="Gallery Image 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Buguema University</h3>
+                    <p>Current Student</p>
+                    <p>Registration Number: BCC/Bu/R/0008a</p>
+                    <p>Pursuing degree in [Your Field of Study]</p>
+                </div>
+            </div>
+            <!-- Add more education items as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: your.email@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Location: Buguema University</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 Jamal Bashi Abdullahi. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
